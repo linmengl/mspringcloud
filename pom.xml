@@ -10,6 +10,10 @@
     <modules>
         <module>mspringcloud-api</module>
         <module>mspringcloud-provider-dept-8001</module>
+        <module>mspringcloud-consume-dept-80</module>
+        <module>mspringcloud-eureka-7001</module>
+        <module>mspringcloud-eureka-7002</module>
+        <module>mspringcloud-eureka-7003</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -41,7 +45,8 @@
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>5.0.4</version>
+                <!--<version>5.0.4</version>-->
+                <version>5.1.46</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba</groupId>
@@ -71,5 +76,26 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <finalName>mspringcloud</finalName>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <delimiters>
+                        <delimit>$</delimit>
+                    </delimiters>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

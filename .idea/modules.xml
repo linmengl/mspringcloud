@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/mspringcloud.iml" filepath="$PROJECT_DIR$/.idea/mspringcloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mspringcloud-api/mspringcloud-api.iml" filepath="$PROJECT_DIR$/mspringcloud-api/mspringcloud-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mspringcloud-provider-dept-8001/mspringcloud-provider-dept-8001.iml" filepath="$PROJECT_DIR$/mspringcloud-provider-dept-8001/mspringcloud-provider-dept-8001.iml" />
+    </modules>
+  </component>
+</project>

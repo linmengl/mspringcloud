@@ -7,7 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mspringcloud-api" />
+        <module name="mspringcloud-provider-dept-8001" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mspringcloud" target="1.8" />
+      <module name="mspringcloud-api" target="1.8" />
+      <module name="mspringcloud-consumer-dept-80" target="1.8" />
+      <module name="mspringcloud-provider-dept-8001" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
