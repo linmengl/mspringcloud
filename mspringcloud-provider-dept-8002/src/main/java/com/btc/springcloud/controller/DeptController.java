@@ -3,6 +3,7 @@ package com.btc.springcloud.controller;
 import com.alibaba.druid.support.json.JSONUtils;
 import com.btc.springcloud.entities.Dept;
 import com.btc.springcloud.service.DeptService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -27,10 +28,20 @@ public class DeptController {
 		return deptService.add(dept);
 	}
 
+
 	@RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
+	@HystrixCommand(fallbackMethod = "hystrixCommand")
 	public Dept get(@PathVariable Long id) {
 		System.out.println("aaa");
-		return deptService.get(id);
+		Dept dept = deptService.get(id);
+		if (dept == null){
+			throw new RuntimeException("没有id为{}"+id+"对应的数据");
+		}
+		return dept;
+	}
+
+	private Dept hystrixCommand(@PathVariable Long id){
+		return new Dept().setDname("没有id为"+id+"对应的数据").setDb_source("no db");
 	}
 
 	@RequestMapping(value = "/dept/list", method = RequestMethod.GET)

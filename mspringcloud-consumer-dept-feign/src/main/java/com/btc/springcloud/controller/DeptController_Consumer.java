@@ -13,17 +13,17 @@ import java.util.List;
 @RestController
 public class DeptController_Consumer {
 
-@Autowired
-private DeptClientService deptClientService;
+	@Autowired
+	private DeptClientService deptClientService;
 
 
 	@RequestMapping(value = "/consumer/dept/add")
-	public boolean add(Dept dept){
+	public boolean add(Dept dept) {
 		return deptClientService.add(dept);
 	}
 
 	@RequestMapping(value = "/consumer/dept/get/{id}")
-	public Dept get(@PathVariable Long id){
+	public Dept get(@PathVariable Long id) {
 		return deptClientService.get(id);
 	}
 

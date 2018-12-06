@@ -4,10 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableEurekaClient
 @EnableFeignClients(basePackages = "com.btc.springcloud")
+@ComponentScan("com.btc.springcloud")
 public class DeptConsumerFeign_App {
 
 	public static void main(String[] args) {

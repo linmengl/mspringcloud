@@ -18,6 +18,10 @@
         <module>mspringcloud-provider-dept-8003</module>
         <module>mspringcloud-consumer-dept-feign</module>
         <module>mspringcloud-provider-dept-8001-hystrix</module>
+        <module>mspringcloud-consumer-hystrix-dashboard</module>
+        <module>mspringcloud-zuul-gateway-9527</module>
+        <module>mspringcloud-config-3344</module>
+        <module>mspringcloud-config-client-3355</module>
     </modules>
     <packaging>pom</packaging>
 

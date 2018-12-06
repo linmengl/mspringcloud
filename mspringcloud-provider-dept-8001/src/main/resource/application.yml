@@ -9,7 +9,7 @@ mybatis:
 
 spring:
   application:
-    name: mspringcloud-provider-dept
+    name: mspringcloud-provider-dept                        #服务名称
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource            # 当前数据源操作类型
     driver-class-name: org.gjt.mm.mysql.Driver              # mysql驱动包
@@ -29,10 +29,10 @@ eureka:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
 # 项目实例名称
   instance:
-      instance-id: mspringcloud-provider-dept8001
+      instance-id: mspringcloud-provider-dept8001           #服务在eureka链接显示的名称
       prefer-ip-address: true                                #在eureka注册中心访问项目路径可以显示IP地址
 
-#配置服务注册中心本项目的信息
+#配置服务注册中心本项目的相关信息
 info:
   app.name: mspringcloud-provider-dept8001
   company.name: www.btc.com

@@ -47,7 +47,5 @@ public class DeptController {
 			System.out.println(instance.getServiceId()+"=="+instance.getHost()+"=="+instance.getUri());
 		}
 		return this.discoveryClient;
-
-
 	}
 }

@@ -30,7 +30,7 @@ public class DeptController {
 	}
 
 	@RequestMapping(value = "/dept/get/{id}", method = RequestMethod.GET)
-	@HystrixCommand(defaultFallback = "")
+	@HystrixCommand(fallbackMethod = "hystrixCommand")
 	public Dept get(@PathVariable Long id) {
 		System.out.println("aaa");
 		Dept dept = deptService.get(id);
@@ -38,6 +38,10 @@ public class DeptController {
 			throw new RuntimeException("没有id为{}"+id+"对应的数据");
 		}
 		return dept;
+	}
+
+	private Dept hystrixCommand(@PathVariable Long id){
+		return new Dept().setDname("没有id为"+id+"对应的数据").setDb_source("no db");
 	}
 
 	@RequestMapping(value = "/dept/list", method = RequestMethod.GET)
